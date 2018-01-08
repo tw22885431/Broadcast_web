@@ -90,15 +90,15 @@
 
                                             <label for="Password" class="mr-sm-2">Password</label>
 
-                                            <input type="password" class="form-control" id="Password" placeholder="Password">
+                                          <input type="password" class="form-control" id="Password" placeholder="Password">
 
                                         </div>
 
                                         <div class="form-group">
 
-                                            <label for="CheckPassword" class="mr-sm-2">Password</label>
+                                            <label for="CheckPassword" class="mr-sm-2"> Check Password</label>
 
-                                            <input type="password" class="form-control" id="CheckPassword" placeholder="Password">
+                                          <input type="password" class="form-control" id="CheckPassword" placeholder="Password">
 
                                         </div>
 
@@ -130,6 +130,27 @@
 			</form>
 
 		</nav>
+		
+		<div style = "padding: ">
+			
+			<div>
+				
+				<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" width="640" height="480" id="vlc" />
+				
+				<script type="text/javascript">
+					
+					var vlc = document.getElementById("vlc");
+
+					vlc.audio.toggleMute();
+
+				</script>
+				
+			</div>
+			
+			<div>
+			</div>
+			
+		</div>
 		
 	</body>
 </html>
