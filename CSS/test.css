@@ -1,9 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+body{
+	
+	font-family: "cwTeXYen", sans-serif;
+	
+	line-height:2;
+	
+	font-size: 18px;
+	
+	font-weight: 300;
+
+}
+
+footer { background-color:#0c1a1e; min-height:350px; font-family: "cwTeXYen", sans-serif; }
 .footerleft { margin-top:50px; padding:0 36px; }
 .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
 
-.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+.footerleft p { color:#fff; font-size:12px !important; font-family: 'cwTeXYen', sans-serif; margin-bottom:15px;}
 .footerleft p i { width:20px; color:#999;}
 
 
@@ -65,4 +79,13 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
     border-background-color:transparent;
 
 }
+.btn-link{
+	
+	color: aliceblue;
+	
+	border: #ffffff 1px solid;
+	
+}
+
+
 
