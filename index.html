@@ -26,8 +26,8 @@
 		<link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 		
 		<link rel="stylesheet" type="text/css" href = "CSS/test.css" />
-        
-		
+
+		<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 		
 		<meta charset="utf-8">
 		
@@ -217,29 +217,33 @@
             	  </ul>
 
           	</nav>
-            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3"> 
-				
-				<object
-						classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" 
-						codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab"
-						id="vlc"
-						name="vlc"
-						class="vlcPlayer"events="True">
-    
-					<param name="Src" value="rtsp://localhost:1234" />
-    
-					<param name="ShowDisplay" value="True" />
-    
-					<param name="AutoLoop" value="False" />
-    
-					<param name="AutoPlay" value="True" />
-   
-					<embed id="vlcEmb"  type="application/x-google-vlc-plugin" version="VideoLAN.VLCPlugin.2" autoplay="yes" loop="no" width="640" height="480"
-     target="rtsp://localhost:1234" >
-					
-					</embed>
+            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 
-				</object>
+				<video style="width: 640px;height: 360px;" data-dashjs-player autoplay src="http://localhost:1234" controls></video>
+
+				<!--<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" />-->
+
+				<!--<object-->
+						<!--classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"-->
+						<!--codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab"-->
+						<!--id="vlc"-->
+						<!--name="vlc"-->
+						<!--class="vlcPlayer"events="True">-->
+    <!---->
+					<!--<param name="Src" value="rtsp://localhost:1234" />-->
+    <!---->
+					<!--<param name="ShowDisplay" value="True" />-->
+    <!---->
+					<!--<param name="AutoLoop" value="False" />-->
+    <!---->
+					<!--<param name="AutoPlay" value="True" />-->
+   <!---->
+					<!--<embed id="vlcEmb"  type="application/x-google-vlc-plugin" version="VideoLAN.VLCPlugin.2" autoplay="yes" loop="no" width="640" height="480"-->
+     <!--target="rtsp://localhost:1234" >-->
+					<!---->
+					<!--</embed>-->
+
+				<!--</object>-->
 				
         	</main>
 			
