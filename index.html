@@ -32,10 +32,122 @@
 		<meta charset="utf-8">
 		
 		<title>IRC Broadcast</title>
+		
+		<script type="text/javascript">
 
-        <style>
+			var autoScroll = true;		
 
-        </style>
+			$(document).ready(function() { 			
+		
+				SetAutoScrollPerfect();		
+		
+        		SetSocket();			
+		
+			}); 
+	
+/////////////////////////////////////////
+		
+			var themeIndex = "linear-flare-custm";
+			
+			function InitParams(data) {
+	
+		//console.debug(data);
+		
+				if  (data.themeIndex == themeIndex) {
+			
+					if (data.HideIcons == true) {
+				
+						getStyleRule('#div_site_img').display = 'none ';
+					
+					} else {
+				
+						getStyleRule('#div_site_img').display = '';
+			
+					}
+			
+					timeNewMessage = data.TimeNewMessages * 1000;
+		
+				}
+		
+			}
+
+			var qtyMessages = 6;
+	
+			var qtyAllMessages = 100;
+	
+			var timeNewMessage = 10000;	
+
+/////////////////////////////////////////
+	
+			function NewMessage(data) {
+		
+				var obj = JSON.parse( data );
+				
+				if (obj.clear_chat) {
+		
+					$(".user_mess[tag='" + obj.user + "']").html(obj.text);
+				
+				} else {		
+
+
+/////////////////////////////////////////	
+			$('#content').append(
+			
+				$('#message_template').tmpl(obj)
+		
+			);
+						
+			$('.mess').last()
+		
+				.delay(timeNewMessage)
+		
+				.queue(function() {
+               
+				$(this)
+			   
+					.animate({height: 'toggle',  "opacity": 0}, "slow")
+			   
+					.dequeue();
+           		
+			});
+			
+		/////////////////////////////////////////			
+		}
+		
+		if ($('.mess').length > qtyMess) {
+		
+			$('.mess:first').detach();
+		
+		}
+
+
+		UpdateScroll();
+	
+			}		
+		
+		</script>
+
+		
+
+		<script id="message_template" type="text/x-jquery-tmpl">
+	
+			<div class="mess" id="lastblock">
+				
+				<div class="div_message">
+			
+					<span id="div_site">${moderator} ${sub} <span id="div_site_img"> ${spec_img} ${site_img}</span></span> 
+				
+						<div class="fx-flare"></div>
+					
+							<span id="div_nick" style="color:${color_nick}">${user} </span> <span id="сrutches"></span>
+							
+							<span class="user_mess" id="div_text" tag="${user}" style="color:${color_text}">${text}</span>
+						</div>
+				
+				</div>
+		
+		</script>
+
 
 	</head>
 	<body>
@@ -218,34 +330,30 @@
 
           	</nav>
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-
-				<video style="width: 640px;height: 360px;" data-dashjs-player autoplay src="http://localhost:1234" controls></video>
-
-				<!--<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" />-->
-
-				<!--<object-->
-						<!--classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"-->
-						<!--codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab"-->
-						<!--id="vlc"-->
-						<!--name="vlc"-->
-						<!--class="vlcPlayer"events="True">-->
-    <!---->
-					<!--<param name="Src" value="rtsp://localhost:1234" />-->
-    <!---->
-					<!--<param name="ShowDisplay" value="True" />-->
-    <!---->
-					<!--<param name="AutoLoop" value="False" />-->
-    <!---->
-					<!--<param name="AutoPlay" value="True" />-->
-   <!---->
-					<!--<embed id="vlcEmb"  type="application/x-google-vlc-plugin" version="VideoLAN.VLCPlugin.2" autoplay="yes" loop="no" width="640" height="480"-->
-     <!--target="rtsp://localhost:1234" >-->
-					<!---->
-					<!--</embed>-->
-
-				<!--</object>-->
 				
-        	</main>
+				<div style="margin-top: 1%">
+					
+					<h1>
+						
+						測試中by 吳浩綸
+						
+					</h1>
+
+					<video style="width: 50%;height: 50%;" data-dashjs-player autoplay src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
+					
+					<div id="chat-wrapper" class="nano" >
+		
+						<div class="nano-content" id="content">	</div>
+
+					</div>
+
+					<div id="bottom"> 
+					
+					</div>
+
+				</div>
+        	
+			</main>
 			
 		  </div>		   
 		

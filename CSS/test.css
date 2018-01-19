@@ -129,5 +129,170 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: "cwTeXYen", sa
   border-radius: 0;
 }
 
+#div_site_img {
+  
+}
+.div_message {   
+    margin: 15px;
+    position: relative;
+    padding: 5px 15px 5px 15px;
+    height: 100%;
+   -webkit-animation: animationmessageL ease-in-out 0.2s;
+}
+.fx-flare {
+    width: 368px;
+    height: 129px;
+    opacity:0;
+    background: url(flare.png) no-repeat;
+    position: absolute;
+    margin: -60px 0px 0px -130px;
+    padding: 0;
+/*    clear:both;*/
+   -webkit-animation: animationfx linear 1s;
+}
+
+#div_site {
+    top: -5px;
+    float: right;
+    position: relative;
+   -webkit-animation: animationicon linear 3s;
+}  
+span#div_site>img {
+    margin-left: 3px;
+    vertical-align: initial;
+}
+span#div_site_img>img {
+    margin-left: 3px;
+    vertical-align: initial;
+}
+span#div_nick {
+    margin-left: -5px;
+    padding-left: 5px;
+    width: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#div_nick {
+  background: -webkit-linear-gradient(rgba(255,255,255,1) 30%, rgba(255,255,255,0));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 27px;
+  font-style: italic;
+  text-shadow: 0px 0px 13px rgba(255, 255, 255, 0.4);
+  position: absolute;
+-webkit-animation: animationmessage ease-in-out 0.5s;
+  margin-top: -14px;
+} 
+.user_mess>img {
+  image-rendering: pixelated;
+  margin:-9px 0px -4px 1px;
+}
+#div_nick_favorite {
+  background: -webkit-linear-gradient(rgba(255,255,255,1) 30%, rgba(255,255,255,0));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 27px;
+  font-style: italic;
+  text-shadow: 0px 0px 13px rgba(255, 255, 255, 0.4);
+  position: absolute;
+-webkit-animation: animationmessage ease-in-out 0.5s;
+  margin-top: -14px;
+} 
+#div_admin {
+  background: -webkit-linear-gradient(rgba(255,255,255,1) 30%, rgba(255,255,255,0));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  width: 100%;
+  white-space: nowrap;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 27px;
+  font-style: italic;
+  text-shadow: 0px 0px 13px rgba(255, 255, 255, 0.4);
+  position: absolute;
+-webkit-animation: animationmessage ease-in-out 0.5s;
+  margin-top: -14px;
+} 
+#div_text {	
+  color: #FFFFFF;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-style: italic;
+-webkit-animation: animationmessageL ease-in-out 0.5s;
+  margin-left: 15px;
+  min-width: 300px;
+  position: relative;
+  word-wrap: break-word;
+  text-shadow: 0px 0px 1px rgba(256,256,256,1.25);
+  height: 100%;
+}
+
+@-webkit-keyframes animationmessageL {
+  0% {opacity:0;
+  }
+  100% {opacity:1;
+  }
+}
+@-webkit-keyframes animationmessage {
+  0% {opacity:0;
+    -webkit-transform:  translate(-50px,0px) ;
+  }
+  100% {opacity:1;
+    -webkit-transform:  translate(0px,0px) ;
+  }
+}
+@-webkit-keyframes animationfx {
+  0% {opacity:0;
+    -webkit-transform:  translate(100px,0px);
+  }
+  50% {opacity:1;
+    -webkit-transform:  translate(10px,0px);
+  }
+  100% {opacity:0;
+    -webkit-transform:  translate(-10px,0px);
+  }
+}
+@-webkit-keyframes animationicon {
+  0% {opacity:0;
+  }
+  100% {opacity:1;
+  }
+}
+
+
+
+#сrutches{
+    height: 18px;
+    display: -webkit-box;
+}
+#chat-wrapper {
+	
+	background-color: black;
+	
+    position: relative;
+    overflow: auto;
+    height: 100%;
+}
+#content, #chat-wrapper {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#chat-wrapper {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+}
 
 
