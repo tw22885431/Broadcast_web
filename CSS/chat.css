@@ -3,15 +3,14 @@
 .chat_body{
 	
 	-webkit-mask-image: -webkit-gradient(linear, left 10, left top, from(rgb(0, 0, 0)), to(rgba(0,0,0,0)));
-    background-color: transparent;
+    /*background-color: transparent;*/
     margin:0; 
     overflow-x: hidden;		
     overflow-y: hidden;
     height: 100%;
 /*    min-width: 325px;*/
 	
-	width: 50%;
-	
+
 }
 
 div {
@@ -31,7 +30,7 @@ div {
     width: 368px;
     height: 129px;
     opacity:0;
-    background: url(flare.png) no-repeat;
+    background: url("flare.png") no-repeat;
     position: absolute;
     margin: -60px 0px 0px -130px;
     padding: 0;

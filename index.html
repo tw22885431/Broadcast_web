@@ -32,124 +32,29 @@
 		<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 		
 		<meta charset="utf-8">
-		
-		<title>IRC Broadcast</title>
-		
-		<script type="text/javascript">
 
-			var autoScroll = true;		
-
-			$(document).ready(function() { 			
-		
-				SetAutoScrollPerfect();		
-		
-        		SetSocket();			
-		
-			}); 
-	
-/////////////////////////////////////////
-		
-			var themeIndex = "linear-flare-custm";
-			
-			function InitParams(data) {
-	
-		//console.debug(data);
-		
-				if  (data.themeIndex == themeIndex) {
-			
-					if (data.HideIcons == true) {
-				
-						getStyleRule('#div_site_img').display = 'none ';
-					
-					} else {
-				
-						getStyleRule('#div_site_img').display = '';
-			
-					}
-			
-					timeNewMessage = data.TimeNewMessages * 1000;
-		
-				}
-		
-			}
-
-			var qtyMessages = 6;
-	
-			var qtyAllMessages = 100;
-	
-			var timeNewMessage = 10000;	
-
-/////////////////////////////////////////
-	
-			function NewMessage(data) {
-		
-				var obj = JSON.parse( data );
-				
-				if (obj.clear_chat) {
-		
-					$(".user_mess[tag='" + obj.user + "']").html(obj.text);
-				
-				} else {		
-
-
-/////////////////////////////////////////	
-			$('#content').append(
-			
-				$('#message_template').tmpl(obj)
-		
-			);
-						
-			$('.mess').last()
-		
-				.delay(timeNewMessage)
-		
-				.queue(function() {
-               
-				$(this)
-			   
-					.animate({height: 'toggle',  "opacity": 0}, "slow")
-			   
-					.dequeue();
-           		
-			});
-			
-		/////////////////////////////////////////			
-		}
-		
-		if ($('.mess').length > qtyMess) {
-		
-			$('.mess:first').detach();
-		
-		}
-
-
-		UpdateScroll();
-	
-			}		
-		
-		</script>
-
-		
+		<script src="Javascript/chat.js"></script>
 
 		<script id="message_template" type="text/x-jquery-tmpl">
-	
+
 			<div class="mess" id="lastblock">
-				
+
 				<div class="div_message">
-			
-					<span id="div_site">${moderator} ${sub} <span id="div_site_img"> ${spec_img} ${site_img}</span></span> 
-				
+
+					<span id="div_site">${moderator} ${sub} <span id="div_site_img"> ${spec_img} ${site_img}</span></span>
+
 						<div class="fx-flare"></div>
-					
+
 							<span id="div_nick" style="color:${color_nick}">${user} </span> <span id="сrutches"></span>
-							
+
 							<span class="user_mess" id="div_text" tag="${user}" style="color:${color_text}">${text}</span>
 						</div>
-				
+
 				</div>
-		
+
 		</script>
 
+		<title>IRC Broadcast</title>
 
 	</head>
 	<body>
@@ -343,27 +248,30 @@
 					
 					<div>
 
-					<video style="width: 50%;height: 50%;" data-dashjs-player src="http://localhost:8080" controls></video>
+						<video style="width: 50%;height: 50%;" controls></video>
 
-					
-						<div class="chat_body col-xs-6">
-					
-						<div id="chat-wrapper" class="nano" style="background-color: black">
-		
-							<div class="nano-content" id="content">
-							
-								
-								
+					</div>
+
+					<div  style=" z-index: -1;width:50%;height: 50%">
+
+						<div class="chat_body">
+
+							<div id="chat-wrapper" class="nano" style="background-color: black">
+
+								<div class="nano-content" id="content">
+
+									<p>test</p>
+
+								</div>
+
+							</div>
+
+							<div id="bottom">
+
 							</div>
 
 						</div>
 
-						<div id="bottom"> 
-					
-						</div>
-
-					</div>
-						
 					</div>
 						
 				</div>
